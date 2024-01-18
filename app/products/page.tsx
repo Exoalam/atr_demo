@@ -1,8 +1,10 @@
 import React from 'react'
+import ProductCard from './productcard'
 
-const Products = () => {
+const Products = async () => {
+
   return (
-    <div>Products</div>
+    <ProductCard/>
   )
 }
 

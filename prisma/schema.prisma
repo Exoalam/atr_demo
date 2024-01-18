@@ -12,7 +12,7 @@ datasource db {
 
 model items {
   id       Int    @id @default(autoincrement())
-  image    String
+  image    String @db.LongText
   name     String @unique
   quantity Int
 }
