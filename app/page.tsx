@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <div>
-      Main page
+      <img src='homepage.jpg'/>
     </div>
   )
 }

@@ -18,15 +18,17 @@ const ProductcardEditor = () => {
         fetchData();
     }, []);
     return (
-        <>        
-        <div>{data.map(item => <div key={item.id} className='m-2 p-3 w-[25%] bg-slate-300 flex-col rounded-xl'>
-            <img className='h-[50%] w-[50%] m-auto' src={item.image}/>
-            <br></br>
-            <div className='text-right mr-10 text-black'><b>Product Name: </b><input className='placeholder-black bg-white' type='text' placeholder={item.name}></input></div>
-            <br></br>
-            <div className='text-right mr-10 text-black'><b>Quantity: </b><input className='placeholder-black bg-white' type='text' placeholder={String(item.quantity)}></input></div>
+        <>
+            <div className='p-2 flex'>{data.map(item => <div className="card w-[15%] h-[10%] bg-base-100 shadow-xl m-2 p-2">
+                <figure><img src={item.image} alt="Shoes" /></figure>
+                <div className="card-body">
+                    <input type="text" placeholder="Type name" className="input input-bordered input-warning w-full max-w-xs" />
+                    <input type="text" placeholder="Type quantity" className="input input-bordered input-warning w-full max-w-xs" />
+                    <div className="card-actions justify-end"> 
+                        <button className="btn btn-primary">Update</button>
+                    </div>
+                </div>
             </div>)}</div>
-            <button onClick={()=> console.log("hello")}>Update</button>
         </>
      )
 }
