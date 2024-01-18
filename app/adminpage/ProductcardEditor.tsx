@@ -6,15 +6,16 @@ const ProductcardEditor = () => {
     const [data, setData] = useState<items[]>([]);
 
     useEffect(() => {
-        fetch('/api/productData')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-          }
-          return response.json();
-        })
-        .then(data => setData(data))
-        .catch(error => console.error('Error fetching data:', error));
+        const fetchData = async () => {
+            try {
+                const response = await fetch('/api/productData');
+                const jsonData = await response.json();
+                setData(jsonData);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+        fetchData();
     }, []);
     return (
         <>        

@@ -12,3 +12,4 @@ const adminpage = () => {
 }
 
 export default adminpage
+
